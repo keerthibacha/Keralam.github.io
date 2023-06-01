@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resturant</title>
+
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <!-- <link rel="stylesheet" href="/static/about.css"> -->
+    
+    
+</head>
+<body>       
+    <script src="/static/script.js"></script>    
+    <!-- header section starts      -->
+        <header>
+            <a href="#" class="logo"><i class="fas fa-utensils"></i> Keralam</a>
+        
+            <nav class="navbar">
+                <a  href="/home">home</a>
+                <a  href="/about">about</a>
+                <a href="/menu">menu</a>
+                <a  class="active" href="/order"> my order</a>
+                <!-- <a href="/login ">Register/login</a> -->
+            </nav>
+        
+            <div class="icons">
+                <a  href="/logout"class='fas fa-user-alt' style='font-size:20px'></a>
+            </div>
+        
+        </header>
+        
+        <!-- header section ends-->
+       
+        <h2> Ordered items</h2><br> <br>
+        {% if rows %}
+					<table class="table" style="background-color: rgb(255, 255, 255)",w-100>
+						<thead class="thead-dark">
+						<tr>
+							<th scope="col">s.no</th>
+							 <!-- <th scope="col">user name</i></th> -->
+							<th scope="col">FOODID</i></th>
+							<th scope="col">FOODNAME</th>
+							<th scope="col">COST</th>
+							<!-- <th scope="col">Delete Item</th> -->
+						</tr>
+						</thead>
+						<tbody>
+							{% for row in rows %}
+                            <br>
+							<tr>
+								<th scope="row">{{loop.index}}</th>
+								<!-- <td>{{row[0]}}</td> -->
+								<td>{{row[1]}}</td>
+								<td>{{row[2]}}</td>
+								<td><span>&#8377;</span>{{row[3]}}</td>                   						
+							</tr>
+							{% endfor %}
+						
+                        </tbody>
+                        <tfoot>
+							<tr>
+							  <th id="total" colspan="3">Total :</th>
+							  <td>&#8377;{{total}}</td> 
+							</tr>
+                            
+						</tfoot>
+                        
+					</table>
+                    <form method="post" action="#" style="margin-left: 73%; margin-top: 3%">
+                        <button type="submit" class="shop">Buy now</button></form>
+        {% endif %}
+
+
+
+        <style>
+            
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+        :root{
+        
+            --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+        }
+
+        *{
+            font-family: 'Nunito', sans-serif;
+            margin:0; padding:0;
+            /* box-sizing: border-box; */
+            text-decoration: none;
+            outline: none; border:none;
+            text-transform: capitalize;
+            transition: all .2s linear;
+        }
+
+        body {
+            background-image: url('/static/img/bgjpg.jpg');
+            background-color:rgba(184, 184, 184, 0.671);
+            opacity: 5px;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 5.5rem;
+            scroll-behavior: smooth;
+        } 
+
+        section{
+            padding:2rem 9%;
+        }
+
+        section:nth-child(even){
+            background:rgb(94, 67, 67);
+        }
+
+        .sub-heading{
+            text-align: center;
+            color:white;
+            font-size: 2rem;
+            padding-top: 1rem;
+        }
+
+        .heading{
+            text-align: center;
+            color:white;
+            font-size: 3rem;
+            padding-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+
+        header{
+        position: fixed;                               
+        top:0; left: 0; right:0;
+        background: rgb(11, 11, 13);
+        padding:1rem 7%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1000;
+        box-shadow: var(--box-shadow);
+        }
+
+        header .logo{
+            color:#ffffff;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        header .logo i{
+            color:var(--orange);
+        }
+
+
+        header .navbar a{
+            font-size: 1.7rem;
+            border-radius: .5rem;
+            padding:.5rem 1.5rem;
+            color:white;
+        }
+
+        header .navbar a.active,
+        header .navbar a:hover{
+            color:rgb(0, 0, 0);
+            background: rgb(255, 255, 255);
+        }
+
+        header .icons i,
+        header .icons a{
+            cursor: pointer;
+            margin-left: .5rem;
+            height:4.5rem;
+            line-height: 4.5rem;
+            width:4.5rem;
+            text-align: center;
+            font-size: 1.7rem;
+            color:var(--black);
+            border-radius: 50%;
+            background: #eee;
+        }
+
+        header .icons i:hover,
+        header .icons a:hover{
+            color:#fff;
+            background: #ff6600;
+            transform: rotate(360deg);
+        }
+
+        header .icons #menu-bars{
+            display: none;
+        }
+
+            table {
+            table-layout: fixed;
+            width: 70%;
+            border-collapse: collapse;
+            border: 3px solid rgba(213, 212, 212, 0.259);
+            border-radius: 7px;
+            margin-left: 15%;
+            margin-top: 10%;
+            border-radius: 8px;
+            padding-inline-start: 20px 22px;
+            box-shadow: 10px 10px rgb(213, 212, 212);
+            }
+
+            thead th:nth-child(1) {
+            width: 15%;
+            }
+
+            thead th:nth-child(2) {
+            width: 20%;
+            }
+
+            thead th:nth-child(3) {
+            width: 15%;
+            }
+
+            thead th:nth-child(4) {
+            width: 20%;
+            }
+
+            th,
+            td {
+            padding: 20px;
+            }
+            th{
+                font-size: 16px;
+            }
+            td{
+                text-align: center;
+                font-size: 14px;
+            }
+            tr:nth-child(even){background-color: #f2f2f2}
+
+            button{
+            border-radius: 8px;
+            padding: 5px 8px;
+            background-color: #f2f2f2;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 13px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+  
+
+        </style>
+        </body>
+        </html>

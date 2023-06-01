@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Resturant</title>
+
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <!-- <link rel="stylesheet" href="/static/about.css"> -->
+    
+    <style>
+      
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+        :root{
+        
+            --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+        }
+
+        *{
+            font-family: 'Nunito', sans-serif;
+            margin:0; padding:0;
+            /* box-sizing: border-box; */
+            text-decoration: none;
+            outline: none; border:none;
+            text-transform: capitalize;
+            transition: all .2s linear;
+        }
+
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 5.5rem;
+            scroll-behavior: smooth;
+        } 
+
+        section{
+            padding:2rem 9%;
+        }
+
+        section:nth-child(even){
+            background:rgb(94, 67, 67);
+        }
+
+        .sub-heading{
+            text-align: center;
+            color:white;
+            font-size: 2rem;
+            padding-top: 1rem;
+        }
+
+        .heading{
+            text-align: center;
+            color:white;
+            font-size: 3rem;
+            padding-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+
+        header{
+        position: fixed;
+        top:0; left: 0; right:0;
+        background: rgb(11, 11, 13);
+        padding:1rem 7%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1000;
+        box-shadow: var(--box-shadow);
+        }
+
+        header .logo{
+            color:#ffffff;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        header .logo i{
+            color:var(--orange);
+        }
+
+
+        header .navbar a{
+            font-size: 1.7rem;
+            border-radius: .5rem;
+            padding:.5rem 1.5rem;
+            color:white;
+        }
+
+        header .navbar a.active,
+        header .navbar a:hover{
+            color:rgb(0, 0, 0);
+            background: rgb(255, 255, 255);
+        }
+
+        header .icons i,
+        header .icons a{
+            cursor: pointer;
+            margin-left: .5rem;
+            height:4.5rem;
+            line-height: 4.5rem;
+            width:4.5rem;
+            text-align: center;
+            font-size: 1.7rem;
+            color:var(--black);
+            border-radius: 50%;
+            background: #eee;
+        }
+
+        header .icons i:hover,
+        header .icons a:hover{
+            color:#fff;
+            background: #ff6600;
+            transform: rotate(360deg);
+        }
+
+        header .icons #menu-bars{
+            display: none;
+        }
+    
+        .login {
+    margin: auto;
+    padding: 50px;
+    background-color: rgba(245, 245, 245, 0.4);
+    margin-top: 50px;
+    width: 30%;
+    border-radius: 5px;
+  }
+    
+  input {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+  }
+    
+  input:focus {
+    border: 1px solid #c3c3c3;
+  }
+    
+  
+  body {
+    font-family: "Dosis", sans-serif;
+    font-weight: 500;
+    background-image: url('/static/img/bgjpg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+      
+  /* h1,h2,h3,h4,h5,h6 {
+    font-weight: 600;
+  } */
+      
+  a {
+    font-weight: 600;
+    font-size: 30px;
+  }
+      
+  section {
+    padding: 40px;
+    padding-bottom: 80px;
+  }
+
+  .btn {
+    padding: 20px 22px;
+    font-size: 50px;
+    font-weight: 1000;
+    letter-spacing: 1px;
+    width: 25%;
+  }
+  .addbtn{
+    padding: 4px 15px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: rgb(234, 234, 234);
+  }
+  .addbtn:hover{
+    background-color: transparent;
+    /* border-color: rgb(0, 0, 0); */
+    color:rgb(37, 37, 37);
+    
+  }
+      
+  
+        
+  label{
+    font-size: 18px;
+    font-weight: 600;
+  }
+   
+  .form-control-file{
+    font-size: 14px;
+    font-weight: 600;
+  }
+      .about .row .image{
+          flex: 1 1 40rem;
+      }
+  
+      
+      .about .row .content{
+          flex:1 1 40rem;
+      }
+      
+      .about .row .content h3{
+          font-size: 3rem;
+          color: grey;
+          margin-bottom: 1rem;
+      }
+      
+      .about .row .content p{
+          line-height: 4;
+          padding: 1rem 0;
+          font-size: 1.7rem;
+          color:grey;
+      }
+      
+      .about .row.revers{
+          flex-flow: row-reverse;
+          margin: 3rem 0;
+          flex-wrap: wrap;
+      }
+
+    </style>
+</head>
+<body>       
+  <script src="/static/script.js"></script>    
+  <!-- header section starts      -->
+      <header>
+          <a href="#" class="logo"><i class="fas fa-utensils"></i> Keralam</a>
+      
+          <nav class="navbar">
+              <a  href="/admin_home">home</a>
+              <!-- <a href="/login ">Register/login</a> -->
+          </nav>
+      
+          <div class="icons">
+            <a  href="/logout"class='fas fa-user-alt' style='font-size:20px'></a>
+        </div>
+      
+      </header>
+        
+        <!-- header section ends-->
+
+        <div>
+            <section id="about" class="text-center">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-8 intro mx-auto">
+                      <div class="divider"></div>
+                    </div>
+                  </div>
+                </div>
+            </section>
+        
+            <div>
+                <form method="POST" action="/admenu" class="login" enctype="multipart/form-data">
+                    <h1 style="font-size: 25px; text-shadow: #ffffff; text-decoration: darkgoldenrod;"> ADD ITEMS IN MENU</h1>
+                    <br><br>
+                    <label>food name</label><br>
+                    <input type="text" name="name" required/>
+                    <br><br>
+                    <label>food id</label><br>
+                    <input type="text" name="foodid" required/>
+                    <br><br>
+                    <label>Cost</label><br>
+                    <input type="text" name="cost" required/>
+                    <br><br>
+                    <label >Image</label>
+                    <input type="file"class="form-control-file" name="image"accept=".."/>
+                   <br><br>
+                    <button type="submit" value="Submit" class="addbtn">Add</button>
+                    
+                </form>
+        
+            </div>
+        
+            
+            <section id="about" class="text-center">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-8 intro mx-auto">
+                      <div class="divider"></div>
+                    </div>
+                  </div>
+                </div>
+            </section>
+        
+        
+           
+            <script >$(window).scroll(function() {
+        
+              if($(window).scrollTop() > 0) {
+                  $('.navbar').css('background', '#FFBFBA');
+              }
+              else {
+                  $('.navbar').css('background', 'transparent');
+              }
+             });
+            </script>    
+        </body>
+        </html>

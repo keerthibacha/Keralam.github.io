@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resturant</title>
+
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <!-- <link rel="stylesheet" href="/static/menu.css"> -->
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+      :root{
+      
+          --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+      }
+
+      *{
+          font-family: 'Nunito', sans-serif;
+          margin:0; padding:0;
+          /* box-sizing: border-box; */
+          text-decoration: none;
+          outline: none; border:none;
+          text-transform: capitalize;
+          transition: all .2s linear;
+      }
+
+      html{
+          font-size: 62.5%;
+          overflow-x: hidden;
+          scroll-padding-top: 5.5rem;
+          scroll-behavior: smooth;
+      } 
+      body {
+            background-image: url('/static/img/bgjpg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+      section{
+          padding:2rem 9%;
+      }
+
+      section:nth-child(even){
+          background:rgb(94, 67, 67);
+      }
+
+      .sub-heading{
+          text-align: center;
+          color:white;
+          font-size: 2rem;
+          padding-top: 1rem;
+      }
+
+      .heading{
+          text-align: center;
+          color:white;
+          font-size: 3rem;
+          padding-bottom: 2rem;
+          text-transform: uppercase;
+      }
+
+
+      header{
+      position: fixed;
+      top:0; left: 0; right:0;
+      background: rgb(11, 11, 13);
+      padding:1rem 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+      box-shadow: var(--box-shadow);
+      }
+
+      header .logo{
+          color:#ffffff;
+          font-size: 25px;
+          font-weight: 600;
+      }
+
+      header .logo i{
+          color:var(--orange);
+      }
+
+
+      header .navbar a{
+          font-size: 1.7rem;
+          border-radius: .5rem;
+          padding:.5rem 1.5rem;
+          color:white;
+      }
+
+      header .navbar a.active,
+      header .navbar a:hover{
+          color:rgb(0, 0, 0);
+          background: rgb(255, 255, 255);
+      }
+
+      header .icons i,
+      header .icons a{
+          cursor: pointer;
+          margin-left: .5rem;
+          height:4.5rem;
+          line-height: 4.5rem;
+          width:4.5rem;
+          text-align: center;
+          font-size: 1.7rem;
+          color:var(--black);
+          border-radius: 50%;
+          background: #eee;
+      }
+
+      header .icons i:hover,
+      header .icons a:hover{
+          color:#fff;
+          background: #ff6600;
+          transform: rotate(360deg);
+      }
+
+      header .icons #menu-bars{
+          display: none;
+      }
+
+    * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        /* Float four columns side by side */
+        .column {
+            float: left;
+            width: 15%;
+            height: 85%;
+            padding: 0 10px;
+            margin-top: 5%;
+            
+        }
+        
+        /* Remove extra left and right margins, due to padding */
+        .row {margin: 0 50px;}
+        
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            width: 10%;
+        }
+        
+        /* Responsive columns */
+        @media screen and (max-width: 650px) {
+            .column {
+            width: 100%;
+            height: 90%;
+            display: block;
+            margin-bottom: 30px;
+            
+            }
+        }
+        h2{
+            float: top;
+            margin-top: 7%;
+            font-size: 30px;
+        }
+        h3{
+            float: top;
+            margin-top: 7%;
+            font-size: 12px;
+        }
+        p1{
+            float: top;
+            margin-top: 50%;
+            font-size: 30px;
+            margin-left:3%;
+            font-weight: 700;
+            
+        }
+        
+        /* Style the counter cards */
+        .card {
+            box-shadow:  4px 8px 0 rgba(122, 112, 112, 0.7);
+            padding: 36px;
+            height: 100%;
+            text-align: center;
+            image-orientation: center;
+            background-color: rgba(238, 236, 236, 0.7);
+            margin-top: -50px;
+            border-radius: 15px;
+        }
+        
+        button{
+        border-radius: 8px;
+            border: none;
+            color: #ff6600;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 13px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        
+  </style>
+</head>
+<body>       
+    <script src="/static/script.js"></script>    
+    <!-- header section starts      -->
+        <header>
+            <a href="#" class="logo"><i class="fas fa-utensils"></i> Keralam</a>
+        
+            <nav class="navbar">
+                <a  href="/admin_home">home</a>
+                <!-- <a href="/login ">Register/login</a> -->
+            </nav>
+        
+            <div class="icons">
+              <a  href="/logout"class='fas fa-user-alt' style='font-size:20px'></a>
+          </div>
+        
+        
+        </header>
+        
+        <form  action="/admenu" method="POST">
+            <div class="row">
+              <h2>Specials</h2>
+              {%- for row in rows %}
+              <div class="column">
+                <div class="card" style="height: 250px;">
+                  <h3>{{row['FOODNAME']}} 
+                  </h3><br>
+                  <img src="https://keerthimy.s3.jp-tok.cloud-object-storage.appdomain.cloud/{{row['FOODID']}}.jpg" alt="Idiyappami" width="130" height="130">
+                 <br><br>
+                  <h3>&#8377;{{row['COST']}}
+                  </h3>
+                </div>
+              </div>
+              {%- endfor %}
+              
+              
+            </form>
+        
+        </body>
+        </html>

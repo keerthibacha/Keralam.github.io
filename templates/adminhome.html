@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resturant</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/compiled-4.20.0.min.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <!-- <link rel="stylesheet" href="/static/home.css"> -->
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+        :root{
+        
+            --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+        }
+
+        *{
+            font-family: 'Nunito', sans-serif;
+            margin:0; padding:0;
+            /* box-sizing: border-box; */
+            text-decoration: none;
+            outline: none; border:none;
+            text-transform: capitalize;
+            transition: all .2s linear;
+        }
+
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 5.5rem;
+            scroll-behavior: smooth;
+        } 
+
+        section{
+            padding:2rem 9%;
+        }
+
+        section:nth-child(even){
+            background:rgb(94, 67, 67);
+        }
+
+        .sub-heading{
+            text-align: center;
+            color:white;
+            font-size: 2rem;
+            padding-top: 1rem;
+        }
+
+        .heading{
+            text-align: center;
+            color:white;
+            font-size: 3rem;
+            padding-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+
+        header{
+        position: fixed;
+        top:0; left: 0; right:0;
+        background: rgb(11, 11, 13);
+        padding:1rem 7%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1000;
+        box-shadow: var(--box-shadow);
+        }
+
+        header .logo{
+            color:#ffffff;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        header .logo i{
+            color:var(--orange);
+        }
+
+
+        header .navbar a{
+            font-size: 1.7rem;
+            border-radius: .5rem;
+            padding:.5rem 1.5rem;
+            color:white;
+        }
+
+        header .navbar a.active,
+        header .navbar a:hover{
+            color:rgb(0, 0, 0);
+            background: rgb(255, 255, 255);
+        }
+
+        header .icons i,
+        header .icons a{
+            cursor: pointer;
+            margin-left: .5rem;
+            height:4.5rem;
+            line-height: 4.5rem;
+            width:4.5rem;
+            text-align: center;
+            font-size: 1.7rem;
+            color:var(--black);
+            border-radius: 50%;
+            background: #eee;
+        }
+
+        header .icons i:hover,
+        header .icons a:hover{
+            color:#fff;
+            background: #ff6600;
+            transform: rotate(360deg);
+        }
+
+        header .icons #menu-bars{
+            display: none;
+        }
+        body{
+            background-color: rgba(184, 184, 184, 0.671);
+        }
+    </style>
+</head>
+<body>       
+    <script src="/static/script.js"></script>    
+    <!-- header section starts      -->
+        <header>
+            <a href="#" class="logo"><i class="fas fa-utensils"></i> Keralam</a>
+        
+            <nav class="navbar">
+                <a class="active" href="/admin_home">home</a>
+                <!-- <a href="/login ">Register/login</a> -->
+            </nav>
+        
+            <div class="icons">
+              <a  href="/logout"class='fas fa-user-alt' style='font-size:20px'></a>
+          </div>
+        
+        </header>
+        
+        <!-- header section ends-->
+        <div>
+
+            <div>
+                 <img src="/static/img/add.png" height="120" style="margin-top: 80px; margin-left: 440px;">
+                 <a class="add-menu" href="/admenu">
+                 <button class="btn" style="color:white; border-radius: 5px ; background-color: rgb(16, 15, 15); margin-top: 300px; margin-left: -110px;">Add Menu</button></a>
+         
+             </div>
+             <div>
+                <img src="/static/img/menu.png" height="120" style="margin-top: -271px; margin-left: 620px;">
+                <a class="add-menu" href="/view_menu">
+                <button class="btn" style="color:white; border-radius: 5px ; background-color: rgb(16, 15, 15); margin-top: -47px; margin-left: -110px;">View Menu</button></a>
+        
+            </div>
+             <div>
+                <img src="/static/img/wallet.png" height="120" style="margin-top: -300px; margin-left: 790px;">
+                <a class="add-menu" href="/transaction">
+                <button class="btn" style="color:white; border-radius: 5px ; background-color: rgb(16, 15, 15); margin-top: -75px; margin-left: -105px;">Transaction</button></a>
+        
+            </div>
+             <div>
+                <img src="/static/img/profit.png" height="120" style="margin-top: -330px; margin-left: 970px;">
+                <a class="add-menu" href="/profit">
+                <button class="btn" style="color:white; border-radius: 5px ; background-color: rgb(16, 15, 15); margin-top: -104px; margin-left: -110px;">Collection</button></a>
+        
+            </div>
+             <div>
+                <img src="/static/img/menu.png" height="120" style="margin-top: 0px; margin-left: 440px;">
+                <a class="add-menu" href="/dine">
+                <button class="btn" style="color:white; border-radius: 5px ; background-color: rgb(16, 15, 15); margin-top: 220px; margin-left: -110px;">DIne in</button></a>
+        
+            </div>
+            <div>
+                <img src="/static/img/menu.png" height="120" style="margin-top: -265px; margin-left: 640px;">
+                <a class="add-menu" href="/templates/view_menu.html">
+                <button class="btn" style="color:white; border-radius: 5px ; background-color: rgb(16, 15, 15); margin-top: -47px; margin-left: -110px;">Branches</button></a>
+        
+            </div>
+        </div>
+      
+        </body>
+        </html>
